@@ -1,6 +1,6 @@
 <?php
 echo "project works"."<br>";
-$html=file_get_contents("http://www.amazon.ca/gp/product/B003EKNMAI/ref=br_asw_pdt-5?pf_rd_m=A3DWYIK6Y9EEQB&pf_rd_s=desktop-6&pf_rd_r=145EBCFR6HFMH1RVN6PR&pf_rd_t=36701&pf_rd_p=2068471842&pf_rd_i=desktop");
+$html=file_get_contents("http://www.amazon.ca/gp/product/B00SGS7ZH4/ref=s9_acss_bw_hsb_LaptopsS_s2_n?pf_rd_m=A3DWYIK6Y9EEQB&pf_rd_s=merchandised-search-2&pf_rd_r=1S72BA42K5E9DADAAC62&pf_rd_t=101&pf_rd_p=2253690442&pf_rd_i=677252011");
 
 preg_match_all('/<span id="priceblock_ourprice" class=".*?">(.*?)<\/span>/s',
     $html,
