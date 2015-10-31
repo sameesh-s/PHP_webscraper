@@ -1,7 +1,7 @@
 <?php
-$con = mysqli_connect("db.fisat.edu","mca","mca");
+$con = mysqli_connect("localhost","root","mca");
 mysqli_select_db($con,"mcadb") or die(mysqli_error($con));
-$query=mysqli_query($con,"SELECT user_name FROM 47user WHERE pswd = '".$_POST["pswd"]."' and  user_name = '".$_POST["username"]."'");
+$query=mysqli_query($con,"SELECT user_name FROM 47user WHERE password = '".$_POST["pswd"]."' and  user_name = '".$_POST["username"]."'");
 
 if($name=mysqli_fetch_row($query))
 	{

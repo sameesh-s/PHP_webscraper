@@ -1,6 +1,6 @@
 <?php
-$username = "username";
-$password = "password";
+$username = "root";
+$password = "mca";
 $hostname = "localhost"; 
 
 //connection to the database
