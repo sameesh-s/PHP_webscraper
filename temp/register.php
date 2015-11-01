@@ -7,8 +7,11 @@ $pswd=$_POST["pswd"];
 
 echo $name."<br>".$pswd;
 $query=mysqli_query($con,"INSERT INTO 47user(user_name,password) VALUES ('$name','$pswd')");
-echo "inserted";
+
+$query1=mysqli_query($con,"SELECT user_id FROM 47user WHERE password = '".$pswd."' and  user_name = '".$name."'");
+$user_id=mysqli_fetch_row($query1);
 	setcookie("user",$name);
-	//header('Location: user.php');
-	//exit;		
+	setcookie("user_id",$user_id[0]);	
+	header('Location: user.php');
+	exit;		
 ?>
