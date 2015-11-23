@@ -14,9 +14,6 @@ preg_match_all('/<span id="productTitle" class=".*?">(.*?)<\/span>/s',
     PREG_SET_ORDER
 );
 
-
-
-
 $date = date('Y/m/d H:i:s');
 echo $date."<br>";
 echo $title[0][0]."   :   ";
