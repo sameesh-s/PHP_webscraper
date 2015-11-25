@@ -1,0 +1,42 @@
+<?php
+	$url="db.fisat.edu";
+	$user="mca";
+	$pass="mca";
+	$db="mcadb";
+	$conn=mysqli_connect($url,$user,$pass,$db) or die(mysqli_connect_error());
+?>
+<?php
+	$g=$_GET['name'];
+	$d=$_GET['dat'];
+	echo $g." ".$d;
+?>
+
+<body>
+<form action="watchlist.php" method="post">
+<?php
+	include_once("connect.php");
+	$query=mysqli_query($conn,"select * from tbl_pricelist");
+	while($row=mysqli_fetch_row($query))
+	{
+		echo "<input type='checkbox' name='del' value=$row[1]>".$row[0]." <a href='det.php?name=$row[1]&&dat=$row[0]'>".$row[1]."</a><br>";
+	}
+	if(isset($_POST['delete']))
+	{
+		$del=$_POST['del'];
+		
+	}
+?>
+<br><input type="submit" value="ok" name="delete">
+</form>
+</body>
+
+<html>
+<head><title>Home:Scrape</title>
+</head>
+<body>
+	<center><h1>Home</h1>
+	<a href="add.php"><font size=12>Add URL</font></a><br>
+	<a href="watchlist.php"><font size=12>Watch List</font></a>
+</body>
+</html>
+</html>
