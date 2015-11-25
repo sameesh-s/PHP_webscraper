@@ -1,0 +1,21 @@
+<html>
+<head><title>watchlist</title></head>
+<body>
+<form action="watchlist.php" method="post">
+<?php
+	include_once("connect.php");
+	$query=mysqli_query($conn,"select * from tbl_pricelist");
+	while($row=mysqli_fetch_row($query))
+	{
+		echo "<input type='checkbox' name='del' value=$row[1]>".$row[0]." <a href='det.php?name=$row[1]&&dat=$row[0]'>".$row[1]."</a><br>";
+	}
+	if(isset($_POST['delete']))
+	{
+		$del=$_POST['del'];
+		
+	}
+?>
+<br><input type="submit" value="ok" name="delete">
+</form>
+</body>
+</html>
